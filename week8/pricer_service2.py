@@ -9,7 +9,8 @@ image = Image.debian_slim().pip_install(
 
 # This collects the secret from Modal.
 # Depending on your Modal configuration, you may need to replace "huggingface-secret" with "hf-secret"
-secrets = [modal.Secret.from_name("huggingface-secret")]
+# secrets = [modal.Secret.from_name("huggingface-secret")]
+secrets = [modal.Secret.from_name("hf-secret")]
 
 GPU = "T4"
 BASE_MODEL = "meta-llama/Llama-3.2-3B"

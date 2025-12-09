@@ -5,7 +5,8 @@ from modal import Image
 
 app = modal.App("llama")
 image = Image.debian_slim().pip_install("torch", "transformers", "accelerate")
-secrets = [modal.Secret.from_name("huggingface-secret")]
+# secrets = [modal.Secret.from_name("huggingface-secret")]
+secrets = [modal.Secret.from_name("hf-secret")]
 GPU = "T4"
 MODEL_NAME = "meta-llama/Llama-3.2-3B"
 
