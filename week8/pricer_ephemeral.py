@@ -17,27 +17,12 @@ GPU = "T4"
 BASE_MODEL = "meta-llama/Llama-3.2-3B"
 PROJECT_NAME = "pricer"
 
-# HF_USER = "ed-donner"  # your HF name here! Or use mine if you just want to reproduce my results.
-# RUN_NAME = "2025-11-28_18.47.07"
-# PROJECT_RUN_NAME = f"{PROJECT_NAME}-{RUN_NAME}"
-# REVISION = "b19c8bfea3b6ff62237fbb0a8da9779fc12cefbd"
-# FINETUNED_MODEL = f"{HF_USER}/{PROJECT_RUN_NAME}"
 
-# HF_USER = "ryansunmoon"  # your HF name here! Or use mine if you just want to reproduce my results.
-# RUN_NAME = "2025-11-09_08.13.38"
-# PROJECT_RUN_NAME = f"{PROJECT_NAME}-{RUN_NAME}"
-# REVISION = "47d663e14f8ecbe8d179f23a2fe27d18af257e82"
-# FINETUNED_MODEL = f"{HF_USER}/{PROJECT_RUN_NAME}"
-
-HF_USER = "ed-donner" # your HF name here! Or use mine if you just want to reproduce my results.
-RUN_NAME = "2024-09-13_13.04.39"
+HF_USER = "ed-donner"  # your HF name here! Or use mine if you just want to reproduce my results.
+RUN_NAME = "2025-11-28_18.47.07"
 PROJECT_RUN_NAME = f"{PROJECT_NAME}-{RUN_NAME}"
-REVISION = "e8d637df551603dc86cd7a1598a8f44af4d7ae36"
+REVISION = "b19c8bfea3b6ff62237fbb0a8da9779fc12cefbd"
 FINETUNED_MODEL = f"{HF_USER}/{PROJECT_RUN_NAME}"
-
-
-
-
 
 @app.function(image=image, secrets=secrets, gpu=GPU, timeout=1800)
 def price(description: str) -> float:
