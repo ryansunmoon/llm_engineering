@@ -44,14 +44,14 @@ class PlanningAgent(Agent):
         :return: an Opportunity if one was surfaced, otherwise None
         """
         self.log("Planning Agent is kicking off a run")
-        selection = self.scanner.scan(memory=memory)
+        selection = self.scanner.scan(memory=memory) # scan for deals
         if selection:
-            opportunities = [self.run(deal) for deal in selection.deals[:5]]
+            opportunities = [self.run(deal) for deal in selection.deals[:5]] # price the top 5 deals
             opportunities.sort(key=lambda opp: opp.discount, reverse=True)
             best = opportunities[0]
-            self.log(f"Planning Agent has identified the best deal has discount ${best.discount:.2f}")
+            self.log(f"Planning Agent has identified the best deal has discount ${best.discount:.2f}") 
             if best.discount > self.DEAL_THRESHOLD:
-                self.messenger.alert(best)
+                self.messenger.alert(best) # send a notification if it's a good deal
             self.log("Planning Agent has completed a run")
             return best if best.discount > self.DEAL_THRESHOLD else None
         return None

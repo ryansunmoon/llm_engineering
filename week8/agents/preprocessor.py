@@ -4,8 +4,12 @@ import os
 
 load_dotenv(override=True)
 
-DEFAULT_MODEL_NAME = os.getenv("PRICER_PREPROCESSOR_MODEL", "ollama/llama3.2")
-DEFAULT_REASONING_EFFORT = "low" if "gpt-oss" in DEFAULT_MODEL_NAME else None
+# DEFAULT_MODEL_NAME = os.getenv("PRICER_PREPROCESSOR_MODEL", "ollama/llama3.2")
+# DEFAULT_MODEL_NAME = 'gpt-oss-120b'
+# DEFAULT_REASONING_EFFORT = "low" if "gpt-oss" in DEFAULT_MODEL_NAME else None
+
+DEFAULT_MODEL_NAME = "openai/gpt-4o-mini"
+DEFAULT_REASONING_EFFORT = None
 
 SYSTEM_PROMPT = """Create a concise description of a product. Respond only in this format. Do not include part numbers.
 Title: Rewritten short precise title
