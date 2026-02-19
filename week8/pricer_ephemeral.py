@@ -15,13 +15,13 @@ secrets = [modal.Secret.from_name("hf-secret")]
 
 GPU = "T4"
 BASE_MODEL = "meta-llama/Llama-3.2-3B"
-PROJECT_NAME = "pricer"
+PROJECT_NAME = "price"
 
 
 HF_USER = "ed-donner"  # your HF name here! Or use mine if you just want to reproduce my results.
 RUN_NAME = "2025-11-28_18.47.07"
 PROJECT_RUN_NAME = f"{PROJECT_NAME}-{RUN_NAME}"
-REVISION = "b19c8bfea3b6ff62237fbb0a8da9779fc12cefbd"
+REVISION = "a6139e4b7208fd3d6bc4a3a1e50832948761b295"
 FINETUNED_MODEL = f"{HF_USER}/{PROJECT_RUN_NAME}"
 
 @app.function(image=image, secrets=secrets, gpu=GPU, timeout=1800)
